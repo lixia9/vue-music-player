@@ -73,14 +73,9 @@
         }
       }
       var result = ""+parseInt(theTime);
-      if(parseInt(theTime)==NaN){
-        result="00";
-      }
+
       if(parseInt(theTime)<10){
         result = "0"+parseInt(theTime)
-      }
-       if(parseInt(theTime1)==NaN){
-        result="00:00";
       }
       if(theTime1 > 0) {
         if(parseInt(theTime1)<10){
@@ -92,7 +87,9 @@
       }else{
         result = "00:00:"+result;
       }
-
+      if(result.indexOf("NaN")!=-1){
+        result="00:00:00"
+      }
       return result;
     },
     musicplay(){

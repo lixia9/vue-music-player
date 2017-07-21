@@ -82,7 +82,7 @@
          play(song){
          this.$store.state.canplay = false;
          let id = song.album.id.toString();
-         this.$store.state.playUrl ="//ws.stream.qqmusic.qq.com/"+song.id+".m4a?fromtag=46";
+         this.$store.state.playUrl ="http://ws.stream.qqmusic.qq.com/"+song.id+".m4a?fromtag=46";
          this.$store.state.name =song.name;
          let b = id.substring(id.length-2)*1;
          this.$store.state.pic ='//imgcache.qq.com/music/photo/album_300/'+b+'/300_albumpic_'+id+'_0.jpg';

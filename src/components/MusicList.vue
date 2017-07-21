@@ -120,10 +120,10 @@
    play(song){
     this.$store.state.showHistory= false;
     let id = song.album.id.toString();
-     this.$store.state.playUrl ="http://ws.stream.qqmusic.qq.com/"+song.id+".m4a?fromtag=46";
+     this.$store.state.playUrl ="//ws.stream.qqmusic.qq.com/"+song.id+".m4a?fromtag=46";
      this.$store.state.name =song.name;
      let b = id.substring(id.length-2)*1;
-     this.$store.state.pic ='http://imgcache.qq.com/music/photo/album_300/'+b+'/300_albumpic_'+id+'_0.jpg';
+     this.$store.state.pic ='//imgcache.qq.com/music/photo/album_300/'+b+'/300_albumpic_'+id+'_0.jpg';
      this.$store.state.historyList.push(song)
    try {
   localStorage.setItem("historyList",JSON.stringify( this.$store.state.historyList))
@@ -133,7 +133,7 @@
      this.$router.push("music")
    },
    getData(){
-     this.$http.jsonp('http://c.y.qq.com/soso/fcgi-bin/client_search_cp',{
+     this.$http.jsonp('//c.y.qq.com/soso/fcgi-bin/client_search_cp',{
       params : this.param,
       jsonp:"jsonpCallback"
     }).then((response) => {
